@@ -34,7 +34,7 @@ const Home = () => {
     <div className="p-4 flex h-screen flex-col gap-5 items-center justify-start">
       <div className="flex flex-col justify-center items-center gap-3 ">
         <div className="flex gap-3 items-center justify-center">
-          <h1 className="text-3xl my-8 font-mono ">BigTown Movie Theatre</h1>
+          <h1 className="text-3xl my-8 font-mono ">SmallTown Movie Theatre</h1>
           <MdLocalMovies className="text-4xl" />
         </div>
         <Link className="flex items-center gap-2" to="/movies/create">
