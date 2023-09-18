@@ -19,7 +19,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://movie-theater-backend.vercel.app/movies")
+      .get("https://movietheatrebackend.onrender.com/movies")
       .then((response) => {
         setMovies(response.data.data);
         setLoading(false);

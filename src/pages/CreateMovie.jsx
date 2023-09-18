@@ -34,7 +34,7 @@ const CreateMovie = () => {
     };
     setLoading(true);
     axios
-      .post("https://movie-theater-backend.vercel.app/movies", data)
+      .post("https://movietheatrebackend.onrender.com/movies", data)
       .then(() => {
         setLoading(false);
         navigate('/');

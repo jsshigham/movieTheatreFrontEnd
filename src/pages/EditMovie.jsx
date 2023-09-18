@@ -37,7 +37,7 @@ const EditMovie = () => {
     };
     setLoading(true);
     axios
-      .put(`https://movie-theater-backend.vercel.app/movies/${movie._id}`, data)
+      .put(`https://movietheatrebackend.onrender.com/movies/${movie._id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");
@@ -52,7 +52,7 @@ const EditMovie = () => {
   const handleDelete = () => {
     setLoading(true);
     axios
-      .delete(`https://movie-theater-backend.vercel.app/movies/${id}`)
+      .delete(`https://movietheatrebackend.onrender.com/movies/${id}`)
       .then(() => {
         setLoading(false);
         navigate("/");
@@ -67,7 +67,7 @@ const EditMovie = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://movie-theater-backend.vercel.app/movies/${id}`)
+      .get(`https://movietheatrebackend.onrender.com/movies/${id}`)
       .then((response) => {
         setMovie(response.data.movie);
 
