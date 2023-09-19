@@ -86,8 +86,8 @@ const EditMovie = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className=" flex">
-          
+        <div className=" flex flex-col">
+          <div className="h-1 w-1 border-1 border-white"/>
           <div className=" flex flex-col border-2 border-sky-950 justify-center items-center mx-auto rounded-xl w-fit gap-4 p-4">
             <form
               className=" flex flex-col  justify-center items-center mx-auto rounded-xl w-fit gap-4 p-2"
@@ -180,8 +180,8 @@ const EditMovie = () => {
               <MdOutlineDelete className="text-4xl text-red-600 " />
             </button>
           </div>
-          {isDeleting ? (
-            <div className="bg-white border-2 h-56 w-56 border-sky-950 absolute top-1/8 rounded-2xl mx-auto flex flex-col justify-center items-center gap-5 ">
+          {isDeleting && (
+            <div className="bg-white border-2 h-56 w-96 border-sky-950 absolute m-auto left-0 right-0 top-1/4 rounded-2xl flex flex-col justify-center items-center gap-5 ">
               <h4 className="text-black">Are you sure?</h4>
               <div className="flex items-center justify-between">
                 <button
@@ -198,7 +198,7 @@ const EditMovie = () => {
                 </button>
               </div>
             </div>
-          ) : null}
+          )}
         </div>
       )}
     </div>
