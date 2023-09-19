@@ -36,9 +36,9 @@ const CreateMovie = () => {
     setLoading(true);
     axios
       .post("https://movietheatrebackend.onrender.com/movies", data)
-      .then((response) => {
+      .then(() => {
         setLoading(false);
-        
+        navigate(`/`);
       })
       .catch((error) => {
         setLoading(false);
