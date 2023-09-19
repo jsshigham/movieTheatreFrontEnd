@@ -20,6 +20,7 @@ const CreateMovie = () => {
   const [showTime6, setShowTime6] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  
   const handleSave = () => {
     const data = {
       title,
@@ -37,7 +38,7 @@ const CreateMovie = () => {
       .post("https://movietheatrebackend.onrender.com/movies", data)
       .then(() => {
         setLoading(false);
-        navigate("/");
+        navigate("https://movie-theater-front-end.vercel.app");
       })
       .catch((error) => {
         setLoading(false);
