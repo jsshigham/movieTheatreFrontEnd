@@ -3,12 +3,7 @@ import axios from "axios";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
-import { BsInfoCircle } from "react-icons/bs";
-import {
-  MdOutlineAddBox,
-  MdOutlineDelete,
-  MdLocalMovies,
-} from "react-icons/md";
+import { MdOutlineAddBox, MdLocalMovies } from "react-icons/md";
 import MovieIcon from "../components/MovieIcon";
 import Showtimes from "../components/Showtimes";
 
@@ -34,8 +29,10 @@ const Home = () => {
     <div className="p-4 flex h-screen flex-col gap-5 items-center justify-start">
       <div className="flex flex-col justify-center items-center gap-3 ">
         <div className="flex gap-3 items-center justify-center">
-          <h1 className="text-3xl my-8 font-mono ">SmallTown Movie Theatre</h1>
-          <MdLocalMovies className="text-4xl" />
+          <h1 className="text-2xl my-8 font-mono ">
+            <span className=" text-sky-400">SmallTown</span> MovieTheater
+          </h1>
+          <MdLocalMovies className="text-4xl text-sky-600" />
         </div>
         <Link className="flex items-center gap-2" to="/movies/create">
           <h4>Add New Movie</h4>

@@ -86,47 +86,8 @@ const EditMovie = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="flex flex-col justify-center items-center gap-5">
-          <div className="flex flex-col justify-center items-center gap-1 border-2 border-sky-950 rounded-xl p-1">
-            <span className="bg-sky-950 rounded p-2 m-2">
-              Current Title: {movie.title}
-            </span>
-            <span className="bg-sky-950 rounded p-2 m-2">
-              Current Genre: {movie.genre}
-            </span>
-            <span className="bg-sky-950 rounded p-2">
-              Current Release Year: {movie.releaseYear}
-            </span>
-            <span>Curent Show Times:</span>
-            <div className="flex flex-wrap gap-1 items-center justify-center p-2">
-              <span className="bg-sky-950 rounded p-1">{movie.showTime1}</span>
-              {movie.showTime2 ? (
-                <span className="bg-sky-950 rounded p-1">
-                  {movie.showTime2}
-                </span>
-              ) : null}
-              {movie.showTime3 ? (
-                <span className="bg-sky-950 rounded p-1">
-                  {movie.showTime3}
-                </span>
-              ) : null}
-              {movie.showTime4 ? (
-                <span className="bg-sky-950 rounded p-1">
-                  {movie.showTime4}
-                </span>
-              ) : null}
-              {movie.showTime5 ? (
-                <span className="bg-sky-950 rounded p-1">
-                  {movie.showTime5}
-                </span>
-              ) : null}
-              {movie.showTime6 ? (
-                <span className="bg-sky-950 rounded p-1">
-                  {movie.showTime6}
-                </span>
-              ) : null}
-            </div>
-          </div>
+        <div className=" flex">
+          
           <div className=" flex flex-col border-2 border-sky-950 justify-center items-center mx-auto rounded-xl w-fit gap-4 p-4">
             <form
               className=" flex flex-col  justify-center items-center mx-auto rounded-xl w-fit gap-4 p-2"
@@ -137,7 +98,7 @@ const EditMovie = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 className="flex flex-col w-full items-center justify-center bg-sky-950 p-1 rounded text-white"
                 type="text"
-                placeholder="Title"
+                value={movie.title}
               />
               <label className="flex flex-col w-full items-center justify-center bg-sky-950 p-1 rounded text-white">
                 Select Genre
@@ -146,7 +107,7 @@ const EditMovie = () => {
                   setChange={setGenre}
                   arrayMap={genres}
                   isShowTime={false}
-                  value={movie.genre}
+                  currentValue={movie.genre}
                 />
               </label>
               <label className="flex flex-col w-full items-center justify-center bg-sky-950  p-1 rounded text-white">
@@ -156,7 +117,7 @@ const EditMovie = () => {
                   setChange={setReleaseYear}
                   arrayMap={years}
                   isShowTime={false}
-                  value={movie.releaseYear}
+                  currentValue={movie.releaseYear}
                 />
               </label>
               <div className="flex flex-col w-full items-center justify-center bg-sky-950  p-1 rounded text-white">
@@ -167,42 +128,42 @@ const EditMovie = () => {
                     setChange={setShowTime1}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime1}
+                    currentValue={movie.showTime1}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime2}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime2}
+                    currentValue={movie.showTime2}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime3}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime3}
+                    currentValue={movie.showTime3}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime4}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime4}
+                    currentValue={movie.showTime4}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime5}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime5}
+                    currentValue={movie.showTime5}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime6}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    value={movie.showTime6}
+                    currentValue={movie.showTime6}
                   />
                 </div>
               </div>

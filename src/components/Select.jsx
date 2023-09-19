@@ -15,7 +15,7 @@ const Select = ({ req, setChange, arrayMap, isShowTime, currentValue = undefined
         value={currentValue}
       >
         {arrayMap.map((element) => {
-          return <option value={element}>{element}</option>;
+          return <option key={element} value={element}>{element}</option>;
         })}
       </select>
     );
