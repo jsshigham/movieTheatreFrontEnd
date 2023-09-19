@@ -37,7 +37,7 @@ const CreateMovie = () => {
       .then((response) => {
         if (response.status === 200) {
           setLoading(false);
-          
+          navigate("/");
         } else {
           console.log(data)
         
@@ -48,7 +48,7 @@ const CreateMovie = () => {
         alert("Not added. Check console for error");
         console.log(error);
       });
-      navigate("/");
+      
   };
   return (
     <div className="flex flex-col bg-slate-900 rounded p-2 h-screen w-full items-center justify-start gap-2">
