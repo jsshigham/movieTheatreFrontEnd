@@ -38,7 +38,7 @@ const CreateMovie = () => {
       .post("https://movietheatrebackend.onrender.com/movies", data)
       .then((response) => {
         setLoading(false);
-        navigate(`/movies`);
+        
       })
       .catch((error) => {
         setLoading(false);
