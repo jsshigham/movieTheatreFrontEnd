@@ -13,11 +13,11 @@ const CreateMovie = () => {
   const [genre, setGenre] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const [showTime1, setShowTime1] = useState("12:00");
-  const [showTime2, setShowTime2] = useState(null);
-  const [showTime3, setShowTime3] = useState(null);
-  const [showTime4, setShowTime4] = useState(null);
-  const [showTime5, setShowTime5] = useState(null);
-  const [showTime6, setShowTime6] = useState(null);
+  const [showTime2, setShowTime2] = useState("");
+  const [showTime3, setShowTime3] = useState("");
+  const [showTime4, setShowTime4] = useState("");
+  const [showTime5, setShowTime5] = useState("");
+  const [showTime6, setShowTime6] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleSave = () => {
