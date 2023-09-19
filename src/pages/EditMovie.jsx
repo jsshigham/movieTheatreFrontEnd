@@ -8,16 +8,16 @@ import { MdOutlineDelete } from "react-icons/md";
 import { genres, showTimes, years } from "../components/Data";
 
 const EditMovie = () => {
-  const [movie, setMovie] = useState({});
+  
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
   const [showTime1, setShowTime1] = useState("12:00");
-  const [showTime2, setShowTime2] = useState(null);
-  const [showTime3, setShowTime3] = useState(null);
-  const [showTime4, setShowTime4] = useState(null);
-  const [showTime5, setShowTime5] = useState(null);
-  const [showTime6, setShowTime6] = useState(null);
+  const [showTime2, setShowTime2] = useState("");
+  const [showTime3, setShowTime3] = useState("");
+  const [showTime4, setShowTime4] = useState("");
+  const [showTime5, setShowTime5] = useState("");
+  const [showTime6, setShowTime6] = useState("");
   const [loading, setLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const { id } = useParams();
@@ -37,7 +37,7 @@ const EditMovie = () => {
     };
     setLoading(true);
     axios
-      .put(`https://movietheatrebackend.onrender.com/movies/${movie._id}`, data)
+      .put(`https://movietheatrebackend.onrender.com/movies/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");
@@ -69,7 +69,16 @@ const EditMovie = () => {
     axios
       .get(`https://movietheatrebackend.onrender.com/movies/${id}`)
       .then((response) => {
-        setMovie(response.data.movie);
+        setTitle(response.data.movie.title);
+        setGenre(response.data.movie.genre);
+        setReleaseYear(response.data.movie.releaseYear);
+        setShowTime1(response.data.movie.showTime1);
+        setShowTime2(response.data.movie.showTime2);
+        setShowTime3(response.data.movie.showTime3);
+        setShowTime4(response.data.movie.showTime4);
+        setShowTime5(response.data.movie.showTime5);
+        setShowTime6(response.data.movie.showTime6);
+
 
         setLoading(false);
       })
@@ -98,7 +107,7 @@ const EditMovie = () => {
                 onChange={(e) => setTitle(e.target.value)}
                 className="flex flex-col w-full items-center justify-center bg-sky-950 p-1 rounded text-white"
                 type="text"
-                value={movie.title}
+                value={title}
               />
               <label className="flex flex-col w-full items-center justify-center bg-sky-950 p-1 rounded text-white">
                 Select Genre
@@ -107,7 +116,7 @@ const EditMovie = () => {
                   setChange={setGenre}
                   arrayMap={genres}
                   isShowTime={false}
-                  currentValue={movie.genre}
+                  currentValue={genre}
                 />
               </label>
               <label className="flex flex-col w-full items-center justify-center bg-sky-950  p-1 rounded text-white">
@@ -117,7 +126,7 @@ const EditMovie = () => {
                   setChange={setReleaseYear}
                   arrayMap={years}
                   isShowTime={false}
-                  currentValue={movie.releaseYear}
+                  currentValue={releaseYear}
                 />
               </label>
               <div className="flex flex-col w-full items-center justify-center bg-sky-950  p-1 rounded text-white">
@@ -128,42 +137,42 @@ const EditMovie = () => {
                     setChange={setShowTime1}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime1}
+                    currentValue={showTime1}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime2}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime2}
+                    currentValue={showTime2}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime3}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime3}
+                    currentValue={showTime3}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime4}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime4}
+                    currentValue={showTime4}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime5}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime5}
+                    currentValue={showTime5}
                   />
                   <Select
                     req={false}
                     setChange={setShowTime6}
                     arrayMap={showTimes}
                     isShowTime={true}
-                    currentValue={movie.showTime6}
+                    currentValue={showTime6}
                   />
                 </div>
               </div>
