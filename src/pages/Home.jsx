@@ -47,7 +47,7 @@ const Home = () => {
             return (
               <div
                 key={movie._id}
-                className="flex flex-col items-center justify-between gap-2 h-fit border-2 p-2 border-sky-950 rounded"
+                className="flex flex-col items-center justify-between gap-2 h-full border-2 p-2 border-sky-950 rounded"
               >
                 <h1 className=" text-center text-xl font-mono">
                   {movie.title}
