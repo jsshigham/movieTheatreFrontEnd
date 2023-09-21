@@ -2,7 +2,7 @@ import React from "react";
 
 const Showtimes = ({ movie }) => {
   return (
-    <div className="grid grid-cols-3 rounded p-2 w-full items-center justify-start gap-2 h-20 ">
+    <div className="grid grid-cols-3 rounded p-2 w-full items-start justify-center gap-2 h-20 ">
       <div className="flex items-center justify-center bg-sky-950 p-1 rounded text-white ">
         {movie.showTime1}
       </div>
