@@ -4,11 +4,9 @@ import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import Select from "../components/Select";
-import {genres, showTimes, years } from '../components/Data'
+import { genres, showTimes, years } from "../components/Data";
 
 const CreateMovie = () => {
-  
-
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [releaseYear, setReleaseYear] = useState("");
@@ -20,8 +18,9 @@ const CreateMovie = () => {
   const [showTime6, setShowTime6] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  
-  const handleSave = () => {
+
+  const handleSave = (event) => {
+    event.preventDefault()
     const data = {
       title,
       genre,
@@ -31,21 +30,20 @@ const CreateMovie = () => {
       showTime3,
       showTime4,
       showTime5,
-      showTime6
+      showTime6,
     };
     setLoading(true);
     axios
       .post("https://movietheatrebackend.onrender.com/movies", data)
       .then(() => {
         setLoading(false);
-        navigate(`/`);
+        navigate("/");
       })
       .catch((error) => {
         setLoading(false);
         alert("Not added. Check console for error");
         console.log(error);
       });
-      
   };
   return (
     <div className="flex flex-col bg-slate-900 rounded p-2 h-screen w-full items-center justify-start gap-2">
@@ -53,12 +51,11 @@ const CreateMovie = () => {
 
       {loading ? <Spinner /> : ""}
       <div className="  text-white w-fit mx-auto">
-      <h3 className=" text-xl mx-auto w-fit p-2">Add a New Movie</h3>
-      <p className=" mx-auto w-fit ">
-        List the Title, Genre, Release Year and at least one Show Time
-      </p>
+        <h3 className=" text-xl mx-auto w-fit p-2">Add a New Movie</h3>
+        <p className=" mx-auto w-fit ">
+          List the Title, Genre, Release Year and at least one Show Time
+        </p>
       </div>
-
 
       <form
         className=" flex flex-col border-2 border-sky-950 justify-start items-start mx-auto rounded-xl w-fit gap-4 p-4"
