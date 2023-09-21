@@ -23,7 +23,8 @@ const EditMovie = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handleEdit = () => {
+  const handleEdit = (event) => {
+    event.preventDefault()
     const data = {
       title,
       genre,
